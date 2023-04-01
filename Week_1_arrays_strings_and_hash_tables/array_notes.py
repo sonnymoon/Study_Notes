@@ -1,12 +1,12 @@
 # https://leetcode.com/explore/learn/card/fun-with-arrays/
 # https://leetcode.com/explore/learn/card/array-and-string/
 
-# An array is a collection of items or "elements"
+# An array is a collection of elements
 # An array can be described by its length (the number of elements it contains) as well as its capacity (the number of elements it is able to contain)
 	# Counter intuitively, the capacity of an array is often returned by its "length" attribute
 
 # Elements can range from various data types including primitive data types and other non-primitive data structures
-	# An element in an array can be accessed at its "index"
+	# An element in an array can be accessed at its index
 
 # O(1)
 def access(array, access_index):
@@ -68,17 +68,17 @@ def array_testing():
 	
 	print('BEFORE', length, array)
 
-	access_result = access(array, 1)
-	print('The element at index 1 is', access_result)
+	# access_result = access(array, 1)
+	# print('The element at index 1 is', access_result)
 
-	array, length = insert(array, length, 3, 'X')
+	# array, length = insert(array, length, 3, 'X')
 
-	array, length = delete(array, length, 6)
+	# array, length = delete(array, length, 6)
 
-	search_result = search(array, 8)
-	if search_result >= 0:
-		print('The element 3 is at index', search_result)
-	else:
-		print('The element was not found in the array')
+	# search_result = search(array, 8)
+	# if search_result >= 0:
+	# 	print('The element 3 is at index', search_result)
+	# else:
+	# 	print('The element was not found in the array')
 
 	print('AFTER', length, array)
