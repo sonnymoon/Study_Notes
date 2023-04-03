@@ -29,7 +29,7 @@ def compare(operator_overloading_supported, string_1, string_2):
 		for i in range(len(string_1)):
 			if string_1[i] != string_2[i]:
 				return False
-		
+
 		return True
 
 # O(1) if strings are mutable in the language
@@ -42,7 +42,7 @@ def substitute(mutable, string, substitute_index, new_character):
 		string_array = list(string)
 
 		string_array[substitute_index] = new_character
-		
+
 		string = ''.join(string_array)
 
 		# Alternatively, concatenate the substrings before and after the index

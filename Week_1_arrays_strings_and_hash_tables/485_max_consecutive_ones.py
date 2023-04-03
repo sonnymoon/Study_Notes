@@ -12,5 +12,5 @@ class Solution(object):
 			else:
 				max_consecutive_ones = max(consecutive_ones, max_consecutive_ones)
 				consecutive_ones = 0
-		
+
 		return max(consecutive_ones, max_consecutive_ones)

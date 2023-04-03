@@ -6,7 +6,7 @@ class Solution(object):
 	def sortedSquares(self, nums):
 		length = len(nums)
 
-		result = [] * length
+		result = [ 0 ] * length
 
 		left = 0
 		right = length - 1
@@ -18,5 +18,5 @@ class Solution(object):
 			else:
 				result[i] = nums[right] * nums[right]
 				right -= 1
-		
+
 		return result

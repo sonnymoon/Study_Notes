@@ -4,7 +4,15 @@
 # Time: O(n), Space: O(1)
 class Solution(object):
 	def findNumbers(self, nums):
-		for i in range(len(nums)):
-			nums[i] = 1 if len(str(nums[i])) % 2 == 0 else 0
+		evens = 0
 
-		return sum(nums)
+		for num in nums:
+			if len(str(num)) % 2 == 0:
+				evens += 1
+
+		return evens
+
+# Explanation
+# The variable "evens" is used to track the count of numbers with even number of digits
+# The array is iterated through and each number is converted to a string to check if the number of digits is even to increment "evens"
+# "evens" is returned

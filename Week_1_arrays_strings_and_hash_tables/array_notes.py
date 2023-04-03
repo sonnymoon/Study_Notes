@@ -23,7 +23,7 @@ def insert(array, length, insert_index, element):
 	if insert_index < length:
 		for index in range(length, insert_index - 1, -1):
 			array[index + 1] = array[index]
-	
+
 	array[insert_index] = element
 	length += 1
 
@@ -37,7 +37,7 @@ def insert(array, length, insert_index, element):
 def delete(array, length, delete_index):
 	for index in range(delete_index + 1, length):
 		array[index - 1] = array[index]
-	
+
 	array[length - 1] = '0'
 	length -= 1
 
@@ -65,7 +65,7 @@ def array_testing():
 	for i in range(10):
 		length += 1
 		array[i] = str(i)
-	
+
 	print('BEFORE', length, array)
 
 	# access_result = access(array, 1)
