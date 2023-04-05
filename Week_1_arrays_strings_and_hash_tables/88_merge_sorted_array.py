@@ -22,6 +22,11 @@ class Solution(object):
 			write -= 1
 
 # Explanation
-# Two variables "read1" and "read2" are used to track the index of the numbers in "nums1" and "nums2", respectively
+# Two variables "read1" and "read2" are used to track the indexes of the numbers in "nums1" and "nums2", respectively
 # The variable "write" is used to track the index at which a number should be written into "nums1"
-# Instead of iterating through the numbers of either array, a while loop is used to 
+# The indexes "read2" of "nums2" is iterated through backwards using a while loop
+	# The while conditions until all numbers in "nums2" have been read
+		# The numbers of "nums2" are being relocated to "nums1" so the while loop only depends on "read2"
+	# If not all the numbers in "nums1" have been read and the number at "read1" is greater than the number at "read2", the former is written into "nums1" at index "write"
+	# Otherwise, the number at "read2" is written into "nums1" at index "write"
+	# After each write, "read1" or "read2" as well as "write" are decremented appropriately

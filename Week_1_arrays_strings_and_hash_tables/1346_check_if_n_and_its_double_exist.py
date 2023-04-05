@@ -22,6 +22,8 @@ class Solution(object):
 		return False
 
 # Explanation
-# A hash set is implemented to keep track of the numbers that have already been read in the array
-# The array is iterated through to see if the double of the number or the half of the number (if it is even) has already been seen
-# As soon as a match is found, the function returns "True"
+# The hash set "seen" is used to keep track of the numbers that have already been seen in the array
+# Each number in the array is iterated through using a for loop
+	# If the double of the number or the half of the number (if the number is even) has already been seen, the function returns "True"
+	# If a match has not been found, the number is added to "seen" and the for loop continues
+# If the for loop completes without returning "True, the function returns "False"

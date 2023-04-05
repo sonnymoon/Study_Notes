@@ -17,7 +17,17 @@ class Solution(object):
 		while left < length - 1 and arr[left] < arr[left + 1]:
 			left += 1
 
+		if left == 0:
+			return False
+
 		while right > 0 and arr[right] < arr[right - 1]:
 			right -= 1
 
 		return 0 < left == right < length - 1
+
+# Explanation
+# The variables "left" and "right" are used to track the indexes of the array from the left and right sides, respectively
+# Each index is iterated through using a while loop
+	# Each while loop continues while "left" and "right" have not reached the other end of the array and the next number is greater than the current number
+	# After the first while loop, if "left" is still the same as its initialized index, the function returns "False"
+# After the two while loops have completed, the function returns whether "left" and "right" are equal indexes and are not the first and last indexes of the array

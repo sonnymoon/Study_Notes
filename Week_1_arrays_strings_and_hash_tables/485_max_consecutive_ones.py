@@ -4,13 +4,21 @@
 # Time: O(n), Space: O(1)
 class Solution(object):
 	def findMaxConsecutiveOnes(self, nums):
-		consecutive_ones = max_consecutive_ones = 0
+		count = max_count = 0
 
 		for num in nums:
 			if num == 1:
-				consecutive_ones += 1
+				count += 1
 			else:
-				max_consecutive_ones = max(consecutive_ones, max_consecutive_ones)
-				consecutive_ones = 0
+				max_count = max(count, max_count)
+				count = 0
 
-		return max(consecutive_ones, max_consecutive_ones)
+		return max(count, max_count)
+
+# Explanation
+# The variable "count" is used to track the number of consecutive 1's in the array
+# The variable "max_count" is used to track the highest value of "count"
+# Each number in the array is iterated through using a for loop
+	# If the number is 1, "count" is incremented
+	# Otherwise, the higher value between "count" and "max_count" is set to "max_count" and "count" is reset to 0
+# After the iterations, the higher value between "count" and "max_count" is returned

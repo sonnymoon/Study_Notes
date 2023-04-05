@@ -14,5 +14,6 @@ class Solution(object):
 
 # Explanation
 # The variable "evens" is used to track the count of numbers with even number of digits
-# The array is iterated through and each number is converted to a string to check if the number of digits is even to increment "evens"
-# "evens" is returned
+# Each number in the array is iterated through using a for loop
+	# If the number converted to a string has an even length, "evens" is incremented
+# When the for loop completes, the function returns "evens"

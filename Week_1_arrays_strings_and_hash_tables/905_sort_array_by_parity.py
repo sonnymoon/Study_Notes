@@ -18,6 +18,10 @@ class Solution(object):
 		return nums
 
 # Explanation
-# The array is read from either side until an odd number on the left side and an even number on the right side are found
-# When these conditions are met, the numbers switch places and the loop continues.
-# The entire process can be done in-place as numbers are switching places and does not need to be operated on afterwards.
+# The variables "left" and "right" are used to track the indexes of the array from the left and right sides, respectively
+# Each index in the array are iterated through using a while loop
+	# The while condition processes all the indexes while "left" is less than "right"
+	# At each iteration, if the number at "left" is odd and the number at "right" is even, the number at those indexes are swapped
+	# "left" and "right" are incremented or decremented, respectively, when the number at those indexes are even or odd, respectively
+		# The modulo operation returns either a 0 or 1 for even or odd numbers, respectively, so the result is used to increment "left" and decrement "right"
+# The function returns the array, as all numbers were swapped in-place
