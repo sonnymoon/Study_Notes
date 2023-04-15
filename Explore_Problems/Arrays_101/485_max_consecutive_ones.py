@@ -2,7 +2,7 @@
 # Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
 # Time: O(n), Space: O(1)
-class Solution(object):
+class Solution:
 	def findMaxConsecutiveOnes(self, nums):
 		count = max_count = 0
 
