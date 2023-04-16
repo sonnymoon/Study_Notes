@@ -9,21 +9,38 @@
 
 class Solution:
 	def detectCycle(self, head):
-		if head is None:
+		if head is None or head.next is None:
 			return None
+		
+		seen = set()
 
-		slow = head
-		fast = head
-		fast_index = 0
-		cycle = False
-		min_fast_index_post_cycle = None
+		current = head
 
-		while fast is not None and fast.next is not None:
+		while current is not None:
+			if current in seen:
+				return current
+			
+			seen.add(current)
+
+			current = current.next
+
+		return None
+
+class Solution:
+	def detectCycle(self, head):
+		if head is None or head.next is None:
+			return None
+		
+		slow = fast = entry = head
+
+		while fast.next is not None and fast.next.next is not None:
 			slow = slow.next
 			fast = fast.next.next
 
 			if slow == fast:
-				cycle = True
-
-
+				while slow != entry:
+					slow = slow.next
+					entry = entry.next
+				return entry
+		
 		return None

@@ -20,26 +20,77 @@ class Node:
 
 class Solution:
 	def copyRandomList(self, head):
-		index = 0
-		indexes = {}
+		if head is None:
+			return None
 
-		current = head
+		original_to_new_map = {}
 
-		new_pre_head = Node(None)
+		original = head
+		new = new_head = Node(head.val)
 
-		while current is not None:
-			indexes[index] = current
-			new = Node(current.val, None, current.random)
+		while original is not None:
+			new.val = original.val
 
-			current = current.next
+			if original.next is not None:
+				new.next = Node(0)
+			else:
+				new.next = None
 
+			new.random = original.random
 
+			original_to_new_map[original] = new
 
+			original = original.next
+			new = new.next
 
-		new = None
+		new = new_head
 
-		new_head = Node(head.val)
-		new_current = new_head
-		
-		while current is not None:
-			new_node = Node(current.val)
+		while new is not None:
+			if new.random is not None:
+				new.random = original_to_new_map[new.random]
+
+			new = new.next
+
+		return new_head
+
+class Solution:
+	def copyRandomList(self, head):
+		original_current = head
+		original_next = None
+
+		while original_current is not None:
+			original_next = original_current.next
+
+			new_copy = Node(original_current.val)
+
+			original_current.next = new_copy
+			new_copy.next = original_next
+
+			original_current = original_next
+
+		original_current = head
+
+		while original_current is not None:
+			if original_current.random is not None:
+				original_current.next.random = original_current.random.next
+			
+			original_current = original_current.next.next
+
+		new_pre_head = Node(0)
+
+		original_current = head
+		new_copy = None
+		new_current = new_pre_head
+
+		while original_current is not None:
+			original_next = original_current.next.next
+
+			new_copy = original_current.next
+			new_current.next = new_copy
+			new_current = new_copy
+
+			original_current.next = original_next
+
+			original_current = original_next
+
+		return new_pre_head.next
