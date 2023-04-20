@@ -9,16 +9,22 @@ class Solution:
 		for num in nums:
 			if num == 1:
 				count += 1
+
+				if count > max_count:
+					max_count = count
 			else:
-				max_count = max(count, max_count)
 				count = 0
 
-		return max(count, max_count)
+		return max_count
 
 # Explanation
-# The variable "count" is used to track the number of consecutive 1's in the array
-# The variable "max_count" is used to track the highest value of "count"
-# Each number in the array is iterated through using a for loop
-	# If the number is 1, "count" is incremented
-	# Otherwise, the higher value between "count" and "max_count" is set to "max_count" and "count" is reset to 0
-# After the iterations, the higher value between "count" and "max_count" is returned
+# "count" = count of consecutive 1's
+# "max_count" = highest value of "count"
+# for each number in the array:
+	# if the number is 1:
+		# increment "count"
+		# if "count" is greater than "max_count":
+			# set "max_count" to the value of "count"
+	# else:
+		# "count" is reset to 0
+# return "max_count"

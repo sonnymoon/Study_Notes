@@ -25,9 +25,17 @@ class Solution(object):
 		return result
 
 # Explanation
-# The variable "result" is initialized as an array of 0's where each index will be replaced by the squares of the numbers in the array in the correct position
-# The variables "left" and "right" are used to track the indexes of the array from the left and right sides, respectively
-# Each index of the array is iterated through backwards using a for loop
-	# The variables "square_left" and "square_right" are the squares of the numbers at indexes "left" and "right", respectively
-	# The bigger of the two values are written into "result" at the index and "left" or "right" are incremented or decremented, appropriately
-# The function returns "result"
+# "length" = length of the array
+# "result" = array of sorted sqaures of each number
+# "left" = index from the start of the array
+# "right" = index from the end of the array
+# for each index in "result" starting from the last index:
+	# "square_left" = square of the number at "left"
+	# "square_right" = square of the number at "right"
+	# if "square_left" is greater than "square_right":
+		# set the number at the current index of "result" to "square_left"
+		# increment "left"
+	# else:
+		# set the number at the current index of "result" to "square_right"
+		# decrement "right"
+# return result

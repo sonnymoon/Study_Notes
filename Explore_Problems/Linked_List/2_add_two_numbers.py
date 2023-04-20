@@ -5,9 +5,9 @@
 # You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 class ListNode:
-    def __init__(self, val = 0, next = None):
-        self.val = val
-        self.next = next
+	def __init__(self, val = 0, next = None):
+		self.val = val
+		self.next = next
 
 class Solution:
 	def addTwoNumbers(self, l1, l2):
@@ -69,18 +69,3 @@ class Solution:
 			current_node = current_node.next
 
 		return pre_head.next
-
-# ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-#     int c = 0;
-#     ListNode newHead(0);
-#     ListNode *t = &newHead;
-#     while(c || l1 || l2) {
-#         c += (l1? l1->val : 0) + (l2? l2->val : 0);
-#         t->next = new ListNode(c%10);
-#         t = t->next;
-#         c /= 10;
-#         if(l1) l1 = l1->next;
-#         if(l2) l2 = l2->next;
-#     }
-#     return newHead.next;
-# }

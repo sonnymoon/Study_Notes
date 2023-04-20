@@ -8,28 +8,37 @@ class Solution(object):
 	def duplicateZeros(self, arr):
 		length = len(arr)
 
-		read = length - 1
+		read = write = length - 1
 
-		zeroes = arr.count(0)
+		for num in arr:
+			if num == 0:
+				write += 1
 
-		while zeroes > 0:
-			if read + zeroes < length:
-				arr[read + zeroes] = arr[read]
+		while write - read > 0:
+			if write < length:
+				arr[write] = arr[read]
 			
 			if arr[read] == 0:
-				zeroes -= 0
+				write -= 1
 
-				if read + zeroes < length:
-					arr[read + zeroes] = 0
-			
+				if write < length:
+					arr[write] = 0
+
 			read -= 1
+			write -= 1
 
 # Explanation
-# The variable "read" is used to track the indexes of the numbers in the array and is initialized at the last index
-# The variable "zeroes" is initialized as the count of 0's in the array
-# The numbers of the array are iterated through backwards using a while loop that depends on "zeroes" being greater than 0
-	# A "zeroes" count of 0's will be duplicated so only numbers whose index "read" plus "zeroes" is less than the length will be written back into the array at the sum index
-	# If the index requirement is met, the number at "read" is written at the sum index
-	# If the number at "read" is a 0, "zeroes" is decremented and 0 is written at the new sum index
-		# The 0's are duplicated through having the original 0 written with the first if statement and the duplicate 0 written with the second if statement
-	# "read" is decremented at each iteration
+# "length" = length of the array
+# "read" = index of the current number in the array, starting at the last index
+# "write" = index of the array to write into, starting at the last index
+# iterate through the numbers of the array using a for loop
+	# if the number is 0
+		# increment "write"
+# iterate while the difference between "write" and "read" is greater than 0 using a while loop
+	# if "write" is less than "length"
+		# set the number at "write" to the number at "read"
+	# if the number at "read" is 0
+		# decrement "write"
+		# if "write" is less than "length"
+			# set the number at "write" to 0
+	# decrement "read" and "write"

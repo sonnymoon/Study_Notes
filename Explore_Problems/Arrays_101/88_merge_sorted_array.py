@@ -19,9 +19,21 @@ class Solution(object):
 			else:
 				nums1[write] = nums2[read2]
 				read2 -= 1
+
 			write -= 1
 
 # Explanation
+# "read1" = index of the current number in "nums1", starting at the index of the last number
+# "read2" = index of the current number in "nums2", starting at the last index
+# "write" = index of "nums1" to write into, starting at the last index
+
+# iterate while "read2" is greater than or equal to 0 using a while loop
+	# if "read1" is greater than or equal to 0 and the number at "read1" is greater than the number at "read2"
+
+
+
+
+
 # Two variables "read1" and "read2" are used to track the indexes of the numbers in "nums1" and "nums2", respectively
 # The variable "write" is used to track the index at which a number should be written into "nums1"
 # The indexes "read2" of "nums2" is iterated through backwards using a while loop

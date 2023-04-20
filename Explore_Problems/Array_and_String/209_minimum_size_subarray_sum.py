@@ -4,19 +4,54 @@
 
 class Solution(object):
 	def minSubArrayLen(self, target, nums):
-		sum = 0
-		fast = 0
+		length = len(nums)
+
 		slow = 0
-		window = 10001
+		fast = 0
 
-		while fast < len(nums):
-			sum += nums[fast]
-			fast += 1
+		sum = 0
+		min_subarray = length
 
-			while sum >= target:
-				window = min(window, fast - slow + 1)
+		while fast < length:
+			print(slow, fast, sum, min_subarray)
+			if sum < target:
+				sum += nums[fast]
+				fast += 1
+
+			else:
+				min_subarray = min(fast - slow, min_subarray)
+
+				if min_subarray == 1:
+					return 1
+
 				sum -= nums[slow]
 				slow += 1
+		
+		if min_subarray == length:
+			return 0
+		else:
+			return min_subarray
 
+class Solution(object):
+	def minSubArrayLen(self, target, nums):
+		slow = 0
+		fast = 0
+		sum = 0
+		min_subarray = 0
 
-		return 0 if window == 10001 else window
+		while fast < len(nums):
+			print(slow, fast, sum, min_subarray)
+			if sum < target:
+				sum += nums[fast]
+				fast += 1
+
+			else:
+				min_subarray = min(fast - slow, min_subarray)
+
+				if min_subarray == 1:
+					return 1
+
+				sum -= nums[slow]
+				slow += 1
+		
+		return min_subarray

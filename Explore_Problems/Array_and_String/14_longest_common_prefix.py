@@ -4,23 +4,14 @@
 
 class Solution(object):
 	def longestCommonPrefix(self, strs):
-		shortest = min(strs, key = len)
+		if not strs:
+			return ''
 
-		# for i in range(len(shortest)):
+		shortest_string = min(strs, key = len)
 
+		for index, character in enumerate(shortest_string):
+			for string in strs:
+				if string[index] != character:
+					return shortest_string[:index]
 
-
-
-
-
-		index = 0
-
-		prefix = ""
-		
-
-
-		# for string in strs:
-			# if string[i]
-
-
-		return prefix
+		return shortest_string
